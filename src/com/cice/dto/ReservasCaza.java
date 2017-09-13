@@ -5,6 +5,7 @@
  */
 package com.cice.dto;
 
+import com.cice.business.Visitable;
 import com.cice.utils.TipoArma;
 
 /**
@@ -16,10 +17,13 @@ public class ReservasCaza extends ParqueNacional {
     private double costeLicencia;
     private TipoArma arma;
 
-    public ReservasCaza(double costeLicencia, TipoArma arma) {
+    public ReservasCaza(double costeLicencia, TipoArma arma, Visitable visitable, double extension, int numespecies, String nombre) {
+        super(visitable, extension, numespecies, nombre);
         this.costeLicencia = costeLicencia;
         this.arma = arma;
     }
+
+   
 
     public double getCosteLicencia() {
         return costeLicencia;
@@ -40,6 +44,14 @@ public class ReservasCaza extends ParqueNacional {
     @Override
     public void abrirParque() {
         System.out.println("La Reserva de Caza " + getNombre() + "está abierto");
+    }
+    
+    @Override
+    public void mostrarInfo(){
+        super.mostrarInfo();
+        System.out.println("El coste de licencia es: "+ costeLicencia);
+        System.out.println("El arma utilizada en la Reserva de Caza es: "+ arma.getArma());
+     
     }
 
 }

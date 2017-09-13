@@ -9,9 +9,9 @@ package com.cice.business;
  *
  * @author cice
  */
-public interface EstrategiaVisitable{
+public interface Visitable{
    
-    public  void setVisitable();
+    public  void mostrarVisitable();
     
     
     

@@ -4,9 +4,7 @@
  * and open the template in the editor.
  */
 package com.cice.dto;
-
-import com.cice.business.CreadorVisitable;
-import com.cice.business.EstrategiaVisitable;
+import com.cice.business.Visitable;
 
 /**
  *
@@ -14,16 +12,25 @@ import com.cice.business.EstrategiaVisitable;
  */
 public abstract class ParqueNacional {
     
-    private EstrategiaVisitable visitable;
+    private Visitable visitable;
     private double extension;
     private int numespecies;
     private String nombre;
 
-    public EstrategiaVisitable getVisitable() {
+    public ParqueNacional(Visitable visitable, double extension, int numespecies, String nombre) {
+        this.visitable = visitable;
+        this.extension = extension;
+        this.numespecies = numespecies;
+        this.nombre = nombre;
+    }
+
+    
+    
+    public Visitable getVisitable() {
         return visitable;
     }
 
-    public void setVisitable(EstrategiaVisitable visitable) {
+    public void setVisitable(Visitable visitable) {
         this.visitable = visitable;
     }
 
@@ -53,10 +60,8 @@ public abstract class ParqueNacional {
     public void mostrarInfo(){
         System.out.println("La extensión es: "+ extension);
         System.out.println("El número de especies es: "+ numespecies);
-        System.out.println("El ");
         if (visitable!=null) {
-            CreadorVisitable cv = new CreadorVisitable(visitable);
-            cv.asignarVisitable();
+            visitable.mostrarVisitable();
         
         }
         

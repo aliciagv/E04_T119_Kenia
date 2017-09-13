@@ -9,10 +9,10 @@ package com.cice.business;
  *
  * @author cice
  */
-public class VisitableSi implements EstrategiaVisitable{
+public class VisitableSi implements Visitable{
 
     @Override
-    public void setVisitable() {
+    public void mostrarVisitable() {
         System.out.println("Soy Visitable");
     }
     

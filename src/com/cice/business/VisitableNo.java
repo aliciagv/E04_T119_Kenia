@@ -9,10 +9,10 @@ package com.cice.business;
  *
  * @author cice
  */
-public class VisitableNo implements EstrategiaVisitable{
+public class VisitableNo implements Visitable{
 
     
-    public void setVisitable() {
+    public void mostrarVisitable() {
         System.out.println("No soy visitable");
     }
     
